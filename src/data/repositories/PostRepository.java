@@ -5,12 +5,12 @@ import data.models.Post;
 import java.util.List;
 
 public interface PostRepository {
-    Post findById(int id);
+    Post findById(String id);
     List<Post> findAll();
     long count();
     void deleteAll();
     Post save(Post post);
-    void deleteById(int id);
+    void deleteById(String id);
 
 
 }

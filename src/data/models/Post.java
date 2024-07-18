@@ -1,6 +1,5 @@
 package data.models;
 
-import javax.xml.stream.events.Comment;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +49,7 @@ public class Post {
         return comments;
     }
 
-    public void setComments(List<Comment> comments) {
+    public void setComments(List<data.models.Comment> comments) {
         this.comments = comments;
     }
 
@@ -59,6 +58,6 @@ public class Post {
     private String content;
     private LocalDateTime createdAt = LocalDateTime.now();
     private LocalDateTime updatedAt;
-    private List<Comment>comments = new ArrayList<>();
+    private List<data.models.Comment>comments = new ArrayList<>();
 
 }
