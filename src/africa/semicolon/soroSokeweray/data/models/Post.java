@@ -1,15 +1,15 @@
-package data.models;
+package africa.semicolon.soroSokeweray.data.models;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Post {
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -49,15 +49,15 @@ public class Post {
         return comments;
     }
 
-    public void setComments(List<data.models.Comment> comments) {
+    public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
 
-    private String id;
+    private int id;
     private String title;
     private String content;
     private LocalDateTime createdAt = LocalDateTime.now();
     private LocalDateTime updatedAt;
-    private List<data.models.Comment>comments = new ArrayList<>();
+    private List<Comment>comments = new ArrayList<>();
 
 }

@@ -1,4 +1,4 @@
-package data.models;
+package africa.semicolon.soroSokeweray.data.models;
 
 import java.time.LocalDateTime;
 
@@ -44,9 +44,11 @@ public class Comment {
         this.createdAt = createdAt;
     }
 
+
     private int id;
     private int userId;
     private String contents;
     private int postId;
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt = LocalDateTime.now();
+
 }

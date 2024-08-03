@@ -1,6 +1,6 @@
-package data.repositories;
+package africa.semicolon.soroSokeweray.data.repositories;
 
-import data.models.Post;
+import africa.semicolon.soroSokeweray.data.models.Post;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,13 +9,13 @@ public class PostRepositoryImpl implements PostRepository{
     private List<Post> posts = new ArrayList<>();
 
     @Override
-    public Post findById(String id) {
+    public Post findById(int id) {
         return getPostWith(id);
     }
 
-    private Post getPostWith(String id) {
+    private Post getPostWith(int id) {
         for (Post post : posts){
-            if(post.getId().equals(id)){
+            if(post.getId() ==id){
                 return post;
             }
         }
@@ -44,13 +44,14 @@ public class PostRepositoryImpl implements PostRepository{
     }
 
     @Override
-    public void deleteById(String id) {
+    public void deleteById(int id) {
         deletePostWith(id);
     }
 
-    private void deletePostWith(String id) {
+
+    private void deletePostWith(int id) {
         for (Post post : posts) {
-            if (post.getId().equals(id)) {
+            if (post.getId() == id) {
                 posts.remove(post);
                 break;
             }

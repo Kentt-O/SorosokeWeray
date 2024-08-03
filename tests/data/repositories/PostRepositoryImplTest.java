@@ -1,6 +1,7 @@
 package data.repositories;
 
-import data.models.Post;
+import africa.semicolon.soroSokeweray.data.models.Post;
+import africa.semicolon.soroSokeweray.data.repositories.PostRepositoryImpl;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,7 +11,7 @@ public class PostRepositoryImplTest {
     public void repositoryCanSavePost_AndRetrievePostTest(){
         PostRepositoryImpl postRepository = new PostRepositoryImpl();
         Post samplePost = new Post();
-        samplePost.setId("001");
+        samplePost.setId(1);
         samplePost.setTitle("Semicolon Titans");
         samplePost.setContent("Emmanuel has always been stubborn");
 
@@ -27,12 +28,12 @@ public class PostRepositoryImplTest {
     public void createTwoNewPost_saveTheTwo_findAllTest(){
         PostRepositoryImpl postRepository = new PostRepositoryImpl();
         Post samplePost1 = new Post();
-        samplePost1.setId("001");
+        samplePost1.setId(1);
         samplePost1.setTitle("Java OOP");
         samplePost1.setContent("Introduction to String Class");
 
         Post samplePost2 = new Post();
-        samplePost2.setId("002");
+        samplePost2.setId(2);
         samplePost2.setTitle("Fela Kuti");
         samplePost2.setContent("Afrobeat Legend");
 
@@ -46,32 +47,32 @@ public class PostRepositoryImplTest {
     public void saveTwoPosts_deleteByIdTest(){
         PostRepositoryImpl postRepository = new PostRepositoryImpl();
         Post samplePost1 = new Post();
-        samplePost1.setId("001");
+        samplePost1.setId(1);
         samplePost1.setTitle("Java OOP");
         samplePost1.setContent("Introduction to String Class");
 
         Post samplePost2 = new Post();
-        samplePost2.setId("002");
+        samplePost2.setId(2);
         samplePost2.setTitle("Fela Kuti");
         samplePost2.setContent("Afrobeat Legend");
 
         postRepository.save(samplePost1);
         postRepository.save(samplePost2);
-        postRepository.deleteById("002");
+        postRepository.deleteById(2);
 
         assertEquals(1,postRepository.findAll().size());
     }
 
     @Test
-    public void saveTwoPosts_deleteAllOnceTest(){
+    public void saveTwoPosts_deleteAllTest(){
         PostRepositoryImpl postRepository = new PostRepositoryImpl();
         Post samplePost1 = new Post();
-        samplePost1.setId("001");
+        samplePost1.setId(1);
         samplePost1.setTitle("Java OOP");
         samplePost1.setContent("Introduction to String Class");
 
         Post samplePost2 = new Post();
-        samplePost2.setId("002");
+        samplePost2.setId(2);
         samplePost2.setTitle("Fela Kuti");
         samplePost2.setContent("Afrobeat Legend");
 
@@ -81,6 +82,5 @@ public class PostRepositoryImplTest {
         assertEquals(0,postRepository.count());
 
     }
-
 
 }
